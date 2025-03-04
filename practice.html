@@ -6,465 +6,235 @@
     <title>Document</title>
 </head>
 <body>
-    <!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-  </body></html>
-<!--
-Example Explained
-The <!DOCTYPE html> declaration defines that this document is an HTML5 document
-The <html> element is the root element of an HTML page
-The <head> element contains meta information about the HTML page
-The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
-The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, 
-images, hyperlinks, tables, lists, etc.
-The <h1> element defines a large heading
-The <p> element defines a paragraph
--->
-<!------------------------------------------------------------------------------------------------------------------------------->
+    HTML Input Attributes
 
-The href Attribute
-Example :
-<a href="https://www.faceprep.in">Visit Faceprep</a>
-
-The src Attribute
-Example :
-<img src="img_girl.jpg">
-
-The width and height Attributes
-Example :
-<img src="img_girl.jpg" width="500" height="600">
-
-The alt Attribute
-Example :
-<img src="img_girl.jpg" alt="Girl with a jacket">
-
-The style Attribute
-Example
-<p style="color:greenyellow;">This is a red paragraph.</p>
-
-The lang Attribute
-The following example specifies English as the language:
-Example :
-<html lang="en">
-
-The title Attribute
-Example
-<p title="I'm a tooltip">This is a paragraph.</p>
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-HTML Headings
-
-HTML headings are defined with the <h1> to <h6> tags.
-
-<h1> defines the most important heading. <h6> defines the least important heading.
+The value Attribute
 
 Example
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
+Input fields with initial (default) values:
 
-Customize Headings
-<h1 style="font-size:60px;">Heading 1</h1>
-
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-HTML Display
-
-You cannot be sure how HTML will be displayed.
-
-Large or small screens, and resized windows will create different results.
-
-With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code.
-
-The browser will automatically remove any extra spaces and lines when the page is displayed:
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+<!----------------------->
+The readonly Attribute
 
 Example
-<p>
-This paragraph
-contains a lot of lines
-in the source code,
-but the browser
-ignores it.
-</p>
+A read-only input field:
 
-<p>
-This paragraph
-contains         a lot of spaces
-in the source         code,
-but the        browser
-ignores it.
-</p>
-<!------------->
-
-HTML Horizontal Rules
-Example
-<h1>This is heading 1</h1>
-<p>This is some text.</p>
-<hr>
-<h2>This is heading 2</h2>
-<p>This is some other text.</p>
-<hr>
-<!------------->
-The Poem Problem
-Example
-<p>
-  My Bonnie lies over the ocean.
-
-  My Bonnie lies over the sea.
-
-  My Bonnie lies over the ocean.
-
-  Oh, bring back my Bonnie to me.
-</p>
-<!------------->
-
-Solution - The HTML <pre> Element
-Example
-<pre>
-  My Bonnie lies over the ocean.
-
-  My Bonnie lies over the sea.
-
-  My Bonnie lies over the ocean.
-
-  Oh, bring back my Bonnie to me.
-</pre>
-
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-Background Color
-The CSS background-color property defines the background color for an HTML element.
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John" readonly><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+<!----------------------->
+The disabled Attribute
 
 Example
-<body style="background-color:powderblue;">
-<p style="background-color:tomato;">This is a paragraph.</p>
-<!------------->
-Text Color
-The CSS color property defines the text color for an HTML element:
+A disabled input field:
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John" disabled><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+<!----------------------->
+The size Attribute
 
 Example
-<h1 style="color:blue;">This is a heading</h1>
-<p style="color:red;">This is a paragraph.</p>
-<!------------->
-Fonts
-The CSS font-family property defines the font to be used for an HTML element:
+Set a width for an input field:
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" size="50"><br>
+  <label for="pin">PIN:</label><br>
+  <input type="text" id="pin" name="pin" size="4">
+</form>
+<!----------------------->
+The maxlength Attribute
 
 Example
-<h1 style="font-family:verdana;">This is a heading</h1>
-<p style="font-family:courier;">This is a paragraph.</p>
-<!------------->
-Text Size
-The CSS font-size property defines the text size for an HTML element:
+Set a maximum length for an input field:
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" size="50"><br>
+  <label for="pin">PIN:</label><br>
+  <input type="text" id="pin" name="pin" maxlength="4" size="4">
+</form>
+<!----------------------->
+The min and max Attributes
 
 Example
-<h1 style="font-size:300%;">This is a heading</h1>
-<p style="font-size:160%;">This is a paragraph.</p>
+Set a max date, a min date, and a range of legal values:
 
-<!------------->
-Text Alignment
-The CSS text-align property defines the horizontal text alignment for an HTML element:
+<form>
+  <label for="datemax">Enter a date before 1980-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
 
-Example
-<h1 style="text-align:center;">Centered Heading</h1>
-<p style="text-align:center;">Centered paragraph.</p>
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
 
-
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-HTML <blockquote> for Quotations
-The HTML <blockquote> element defines a section that is quoted from another source.
-
-Browsers usually indent <blockquote> elements.
+  <label for="quantity">Quantity (between 1 and 5):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="5">
+</form>
+<!----------------------->
+The multiple Attribute
 
 Example
-<p>Here is a quote from WWF's website:</p>
-<blockquote cite="http://www.worldwildlife.org/who/index.html">
-For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
-</blockquote>
+A file upload field that accepts multiple values:
 
-<!------------->
-
-HTML <q> for Short Quotations
-
-Example
-<p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
-<!------------->
-
-HTML <abbr> for Abbreviations
+<form>
+  <label for="files">Select files:</label>
+  <input type="file" id="files" name="files" multiple>
+</form>
+<!----------------------->
+The pattern Attribute
 
 Example
-<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
-<!------------->
+An input field that can contain only three letters (no numbers or special characters):
 
-HTML <address> for Contact Information
-
-Example
-<address>
-Written by John Doe.<br>
-Visit us at:<br>
-Example.com<br>
-Box 564, Disneyland<br>
-USA
-</address>
-<!------------->
-
-HTML <cite> for Work Title
+<form>
+  <label for="country_code">Country code:</label>
+  <input type="text" id="country_code" name="country_code"
+  pattern="[A-Za-z]{3}" title="Three letter country code">
+</form>
+<!----------------------->
+The placeholder Attribute
 
 Example
-<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
-HTML <bdo> for Bi-Directional Override
-BDO stands for Bi-Directional Override.
-<!------------->
+An input field with a placeholder text:
 
-The HTML <bdo> tag is used to override the current text direction:
+<form>
+  <label for="phone">Enter a phone number:</label>
+  <input type="tel" id="phone" name="phone"
+  placeholder="123-45-678"
+  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+</form>
+<!----------------------->
+The required Attribute
+Example
+A required input field:
+
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+</form>
+<!----------------------->
+The step Attribute
 
 Example
-<bdo dir="rtl">This text will be written from right to left</bdo>
+An input field with a specified legal number intervals:
 
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-
-Background Color
-Example
-<h1 style="background-color:DodgerBlue;">Hello World</h1>
-<p style="background-color:Tomato;">Lorem ipsum...</p>
-<!------------->
-Text Color
-Example
-<h1 style="color:Tomato;">Hello World</h1>
-<p style="color:DodgerBlue;">Lorem ipsum...</p>
-<p style="color:MediumSeaGreen;">Ut wisi enim...</p>
-<!------------->
-Border Color
-Example
-<h1 style="border:2px solid Tomato;">Hello World</h1>
-<h1 style="border:2px solid DodgerBlue;">Hello World</h1>
-<h1 style="border:2px solid Violet;">Hello World</h1>
-
-Color Values
-Example
-<h1 style="background-color:rgb(255, 99, 71);">...</h1>
-<h1 style="background-color:#ff6347;">...</h1>
-<h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
-
-<h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
-<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
-
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-Absolute URLs vs. Relative URLs
-Example
-<h2>Absolute URLs</h2>
-<p><a href="https://www.faceprep.org/">faceprep</a></p>
-<p><a href="https://www.google.com/">Google</a></p>
-<!------------->
-<h2>Relative URLs</h2>
-<p><a href="html_images.asp">HTML Images</a></p>
-<p><a href="/css/default.asp">CSS Tutorial</a></p>
-<!------------->
-HTML Links - Use an Image as a Link
-Example
-<a href="default.asp">
-<img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
-</a>
-<!------------->
-Link to an Email Address
-Example
-<a href="mailto:someone@example.com">Send email</a>
-<!------------->
-Button as a Link
-Example
-<button onclick="document.location='default.asp'">HTML Tutorial</button>
-
-Link Titles
-The title attribute specifies extra information about an element. The information is most often shown as a tooltip text when the mouse moves over the element.
+<form>
+  <label for="points">Points:</label>
+  <input type="number" id="points" name="points" step="3">
+</form>
+<!----------------------->
+The autofocus Attribute
 
 Example
-<a href="https://www.faceprep.com/html/" title="Go to faceprep HTML section">Visit our HTML Tutorial</a>
+Let the "First name" input field automatically get focus when the page loads:
 
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-The src Attribute
-Example
-<img src="img_chania.jpg" alt="Flowers in Chania">
-<!------------->
-The alt Attribute
-Example
-<img src="img_chania.jpg" alt="Flowers in Chania">
-If a browser cannot find an image, it will display the value of the alt attribute:
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" autofocus><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname">
+</form>
+<!----------------------->
+The height and width Attributes
 
 Example
-<img src="wrongname.gif" alt="Flowers in Chania">
-Tip: A screen reader is a software program that reads the HTML code, and allows the user to "listen" to the content. Screen readers are useful for people who are visually impaired or learning disabled.
-<!------------->
-Image Size - Width and Height
+Define an image as the submit button, with height and width attributes:
+
+<form>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+</form>
+<!----------------------->
+The list Attribute
+The input list attribute refers to a <datalist> element that contains pre-defined options for an <input> element.
 
 Example
-<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
-<!------------->
-Alternatively, you can use the width and height attributes:
+An <input> element with pre-defined values in a <datalist>:
+
+<form>
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+</form>
+<!----------------------->
+The autocomplete Attribute
+The input autocomplete attribute specifies whether a form or an input field should have autocomplete on or off.
 
 Example
-<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
-<!------------->
+An HTML form with autocomplete on, and off for one input field:
 
-Images in Another Folder
+<form action="/action_page.php" autocomplete="on">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" autocomplete="off"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<!--------------------------------------------------------------------------------------------------------------------------->
 
-Example
-<img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+HTML Video
 
-<!------------->
-Images on Another Server/Website
-
-Example
-<img src="https://faceprep.in/images/face_green.jpg" alt="faceprep.in">
-
-<!------------->
-Animated Images
-
-Example
-<img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;">
-<!------------->
-Image as a Link
+The HTML <video> Element
 
 Example
-<a href="default.asp">
-  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
-</a>
-<!------------->
-Image Floating
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<!----------------------->
+HTML <video> Autoplay
+To start a video automatically, use the autoplay attribute:
 
 Example
-<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+<video width="320" height="240" autoplay>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<!----------------------->
 
+HTML Audio
 
-Background Image on a HTML element
-Example 1
-<p style="background-image: url('img_girl.jpg');">
-
-Example 2
-<style>
-p {
-  background-image: url('img_girl.jpg');
-}
-</style>
-<!------------->
-Background Image on a Page
+The HTML <audio> Element
 Example
-<style>
-body {
-  background-image: url('img_girl.jpg');
-}
-</style>
-<!------------->
-Background Repeat
-Example1
-<style>
-body {
-  background-image: url('example_img_girl.jpg');
-}
-</style>
-
-<!------------->
-
-Example2
-<style>
-body {
-  background-image: url('example_img_girl.jpg');
-  background-repeat: no-repeat;
-}
-</style>
-<!------------->
-Background Cover
-Example
-<style>
-body {
-  background-image: url('img_girl.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-</style>
-<!------------->
-Background Stretch
-Example
-<style>
-body {
-  background-image: url('img_girl.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-</style>
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-HTML Favicon
-A favicon is a small image displayed next to the page title in the browser tab.
-
-How To Add a Favicon in HTML
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<!----------------------->
+HTML <audio> Autoplay
+To start an audio file automatically, use the autoplay attribute:
 
 Example
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page Title</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-</head>
-<body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
-</html><head>
-  <title>My Page Title</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-</head>
-
-<!------------------------------------------------------------------------------------------------------------------------------->
-
-HTML Page Title
-
-Example
-<!DOCTYPE html>
-<html>
-<head>
-  <title>HTML Tutorial</title>
-</head>
-<body>
+<audio controls autoplay>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 </body>
 </html>
-<a href="https://www.faceprep.in">Visit Faceprep</a>
-
-The src Attribute
-Example :
-<img src="img_girl.jpg">
-
-The width and height Attributes
-Example :
-<img src="img_girl.jpg" width="500" height="600">
-
-The alt Attribute
-Example :
-<img src="img_girl.jpg" alt="Girl with a jacket">
-
-The style Attribute
-Example
-<p style="color:greenyellow;">This is a red paragraph.</p>
-
-The lang Attribute
-The following example specifies English as the language:
-Example :
-<html lang="en">
-
-The title Attribute
-Example
-<p title="I'm a tooltip">This is a paragraph.</p>
