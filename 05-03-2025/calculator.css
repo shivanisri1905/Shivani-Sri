@@ -1,0 +1,9 @@
+body{
+    border:2px solid;
+    display:inline-block;
+}
+.box{
+    padding: 4px;
+    margin: 15px;
+
+}
