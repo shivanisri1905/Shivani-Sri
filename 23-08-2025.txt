@@ -1,0 +1,21 @@
+show databases;
+create database comPaNy;
+use company;
+CREATE TABLE Persons (
+	ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    Age int
+);
+show tables from company;
+desc persons;
+insert into persons values(101,'R','Harshita sri',19),(102,'G','Shivani sri',20),(103,'S','Harini',19);
+select * from persons;
+ALTER TABLE Persons
+MODIFY Age int NOT NULL;
+
+ALTER TABLE Persons
+ADD UNIQUE (ID);
+
+UPDATE PERSONS SET ID='104'
+WHERE ID='103';
