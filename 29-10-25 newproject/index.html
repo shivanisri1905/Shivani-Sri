@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top">
+    <h1>Monthly Expense Tracker</h1>
+    <div>
+      <input id="month" placeholder="Month">
+      <input id="year" type="number" placeholder="Year">
+    </div>
+  </div>
+
+  <div class="form">
+    <input id="company" placeholder="Expense / Company">
+    <input id="date" type="date">
+    <input id="amount" placeholder="Amount">
+    <input id="mobile" placeholder="Mobile">
+    <input id="address" placeholder="Address">
+    <textarea id="notes" placeholder="Notes"></textarea>
+    <button id="addBtn">Add Expense</button>
+  </div>
+
+ 
+  <div id="entries"></div>
+
+  <div id="total" class="total">Total: ₹0</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
