@@ -1,0 +1,341 @@
+//Multithreading
+
+package nov_25;
+
+import java.util.Scanner;
+
+public class Multithreading {
+	public static void main(String args[]) {
+
+		// object creation for thread classes
+		Numeric num = new Numeric();
+		Alpha alp = new Alpha();
+
+		// start the thread
+		num.start(); 
+		alp.start();
+
+		// get the name of the thread
+		System.out.println("Number Thread : " + num.getName());
+		System.out.println("Alphabets Thread : " + alp.getName());
+
+		// get the priority
+		System.out.println("Number Thread : " + num.getPriority());
+		System.out.println("Alphabets Thread : " + alp.getPriority());
+
+		// check the state of the thread
+		System.out.println("Number Thread : " + num.getState());
+		System.out.println("Alphabets Thread : " + alp.getState());
+
+		// checking the current thread
+		System.out.println(Thread.currentThread().getName());
+
+		// set the name to thread
+		num.setName("Jayanth");
+		alp.setName("Karthick");
+
+		// check the state of the thread
+		System.out.println("Number Thread : " + num.getState());
+		System.out.println("Alphabets Thread : " + alp.getState());
+
+		// checking whether its alive or not
+
+		if (num.isAlive()) {
+		System.out.println("Jayanth thread is Alive");
+		} else {
+			System.out.println("Jayanth Thread is dead");
+		}
+
+		if (alp.isAlive()) {
+		System.out.println("Karthick thread is Alive");
+		} else {
+		System.out.println("Karthiread is dead");
+		}
+
+	}
+
+}
+
+class Numeric extends Thread {
+	int a = 0;
+
+	public void run() {
+
+		try {
+			for (int i = 0; i <= 10; i++) {
+				a++;
+		System.out.println("Numeric Thread : " + a);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+}
+
+class Alpha extends Thread {
+	char a = 'A';
+
+	public void run() {
+		try {
+			for (int i = 0; i <= 25; i++) {
+
+		System.out.println("Alpha Thread : " + a);
+				a++;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+}
+------------------------------------------------------
+//Multithreading Time
+
+package nov_25;
+
+import java.util.Scanner;
+
+public class Multithreadtime {
+	public static void main(String args[]) {
+		// object creation for thread classes
+		Minute num = new Minute();
+		Seconds alp = new Seconds();
+
+		// start the thread
+		num.start();
+		alp.start();
+	
+	}
+
+}
+
+class Minute extends Thread {
+	int a = 0;
+
+	public void run() {
+
+		try {
+			for (int i = 0; i <= 59; i++) {
+				try {
+				System.out.println("Minutes : " + a);
+				a++;
+				Thread.sleep(60000);
+				}
+				catch(Exception e) {
+					System.out.println(e);
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+}
+
+class Seconds extends Thread {
+	int a=0;
+
+	public void run() {
+		try {
+			for (int i = 0; i <= 59; i++) {
+
+				try {
+				System.out.println("Seconds :" + a);
+				a++;
+				Thread.sleep(1000);
+				}
+				catch(Exception e) {
+					System.out.println("Issues in Minutes Thread class");
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
+}
+--------------------------------------------------------------
+//Array
+
+package nov_25;
+
+import java.util.*;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+
+public class Array {
+
+	public static void main(String[] args) {
+
+		System.out.println("1. Declare arrays");
+		int a[];
+		a = new int[40];
+
+		// 1. Declare an array
+		String[] aArray = new String[5];
+		String[] bArray = { "a", "b", "c", "d", "e" };
+		String[] cArray = new String[] { "a", "b", "c", "d", "e" };
+		System.out.println("bArray = " + Arrays.toString(bArray));
+		System.out.println("cArray = " + Arrays.toString(cArray));
+
+		// 2. Print an array in Java
+		System.out.println("\n2. Print an array");
+		int[] intArray = { 1, 2, 3, 4, 5 };
+		System.out.println("Direct print: " + intArray);
+		System.out.println("Arrays.toString(): " + Arrays.toString(intArray));
+
+		// 3. Create an ArrayList from an array
+		System.out.println("\n3. Convert array to ArrayList");
+		String[] stringArray = { "a", "b", "c", "d", "e" };
+		ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(stringArray));
+		System.out.println(arrayList);
+
+		// 4. Check if an array contains a certain value
+
+		System.out.println("\n4. Check array contains");
+		String[] stringArray2 = { "abc", "bcd", "cba", "dcb", "efg" };
+		boolean contains = Arrays.asList(stringArray2).contains("abc");
+		System.out.println(contains);
+
+		// 5. Concatenate two arrays
+		System.out.println("\n5. Concatenate two arrays");
+		int[] intArray2 = { 6, 7, 8, 9, 10 };
+		int[] concat = ArrayUtils.addAll(intArray, intArray2);
+		System.out.println(Arrays.toString(concat));
+
+		// 6. Joins the elements of the provided array into a single String
+		System.out.println("\n6. Join array elements");
+		String joined = StringUtils.join(new String[] { "a", "b", "c" }, ", ");
+		System.out.println(joined);
+
+		// 7. Convert an array to a set
+		System.out.println("\n7. Convert array to Set");
+		String[] s1 = { "a", "b", "c", "d", "e", "a" };
+		Set<String> set123 = new HashSet<>(Arrays.asList(s1));
+		System.out.println(set123);
+
+		// 8. Reverse an array
+		System.out.println("\n8. Reverse an array");
+		int[] revArray = { 1, 2, 3, 4, 5 };
+		ArrayUtils.reverse(revArray);
+		System.out.println(Arrays.toString(revArray));
+
+		// 9. Remove element of an array
+		System.out.println("\n9. Remove element (3) from array");
+		int[] removed = ArrayUtils.removeElement(new int[] { 1, 2, 3, 4, 5 }, 3);
+		System.out.println(Arrays.toString(removed));
+	}
+}
+--------------------------------------------------------------
+//String Concepts
+
+package nov_25;
+
+
+
+public class Stingconcepts {
+    public static void main(String[] args) {
+
+        // toUpperCase(), toLowerCase()
+        String s = "Sachin";
+        System.out.println(s.toUpperCase()); // SACHIN
+        System.out.println(s.toLowerCase()); // sachin
+        System.out.println(s);               // Sachin (original unchanged)
+
+        // trim()
+        String sTrim = " Sachin ";
+        System.out.println(sTrim);           //  Sachin
+        System.out.println(sTrim.trim());    // Sachin
+
+        // startsWith(), endsWith()
+        System.out.println(s.startsWith("Sa")); // true
+        System.out.println(s.endsWith("n"));    // true
+
+        // charAt()
+        System.out.println(s.charAt(0)); // S
+        System.out.println(s.charAt(3)); // h
+
+        // length()
+        System.out.println(s.length()); // 6
+
+        // intern()
+        String sNew = new String("Sachin");
+        String s2 = sNew.intern();
+        System.out.println(s2); // Sachin
+
+        // valueOf()
+        int a = 10;
+        String sVal = String.valueOf(a);
+        System.out.println(sVal + 10); // 1010
+
+        // replace()
+        String s1 = "Java is a programming language. Java is a platform. Java is an Island.";
+        String replaceString = s1.replace("Java", "Kava");
+        System.out.println(replaceString);
+
+        // String concatenation using +
+        String concat1 = "Sachin" + " Tendulkar";
+        System.out.println(concat1);
+
+        // concat() method
+        String c1 = "Sachin ";
+        String c2 = "Tendulkar";
+        String c3 = c1.concat(c2);
+        System.out.println(c3);
+
+        // equals() comparison
+        String e1 = "Sachin";
+        String e2 = "Sachin";
+        String e3 = new String("Sachin");
+        String e4 = "Saurav";
+        System.out.println(e1.equals(e2)); // true
+        System.out.println(e1.equals(e3)); // true
+        System.out.println(e1.equals(e4)); // false
+
+        // == comparison
+        System.out.println(e1 == e2); // true
+        System.out.println(e1 == e3); // false
+
+        // compareTo()
+        String t1 = "Sachin";
+        String t2 = "Sachin";
+        String t3 = "Ratan";
+        System.out.println(t1.compareTo(t2)); // 0
+        System.out.println(t1.compareTo(t3)); // 1
+        System.out.println(t3.compareTo(t1)); // -1
+    }
+}
+-----------------------------------------------------------------
+//Sring Builder
+
+package nov_25;
+public class Stringbuilder {
+    public static void main(String[] args) {
+
+        // append() example
+        StringBuilder sb1 = new StringBuilder("Hello ");
+        sb1.append("Java");
+        System.out.println("" + sb1);
+
+        // insert() example
+        StringBuilder sb2 = new StringBuilder("Hello ");
+        sb2.insert(1, "Java");
+        System.out.println("" + sb2);
+
+        // replace() example
+        StringBuilder sb3 = new StringBuilder("Hello");
+        sb3.replace(1, 3, "Java");
+        System.out.println("" + sb3);
+
+        // delete() example
+        StringBuilder sb4 = new StringBuilder("Hello");
+        sb4.delete(1, 3);
+        System.out.println("" + sb4);
+
+        // reverse() example
+        StringBuilder sb5 = new StringBuilder("Hello");
+        sb5.reverse();
+        System.out.println("" + sb5);
+    }
+}
