@@ -1,0 +1,34 @@
+.main-heading {
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: #AEC6CF;
+    color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 100px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.span-item {
+    background-color: #FF6961; 
+    grid-column: 1 / 4;
+    font-weight: bold;
+    color: white;
+}
